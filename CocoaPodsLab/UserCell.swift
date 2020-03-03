@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+import Kingfisher
 
 class UserCell: UICollectionViewCell {
     
@@ -33,10 +35,54 @@ class UserCell: UICollectionViewCell {
     public func configureCell(user: User) {
         nameLabel.text = "\(user.name.first) \(user.name.last)"
         emailLabel.text = user.email
-        
-        // add images 
+        let imageUrl = URL(string: user.picture.medium)
+        userImage.kf.setImage(with: imageUrl)
     }
     
     // constraints
+    override init(frame: CGRect) {
+        super.init(frame: frame) // for a cell
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        constrainImage()
+        //constrainName()
+        constrainEmail()
+    }
+    
+    private func constrainImage() {
+        addSubview(userImage)
+            
+        userImage.snp.makeConstraints { (make) in
+            
+            make.height.equalTo(self).multipliedBy(0.9)
+            make.leading.equalTo(self).offset(10)
+            make.width.equalTo(self).multipliedBy(0.5)
+            make.centerY.equalTo(self)
+          
+        }
+        
+    }
+    
+    private func constrainName() {
+        addSubview(nameLabel)
+        
+        nameLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(userImage.snp.leading).offset(10)
+            make.trailing.equalTo(self).offset(10)
+            make.centerY.equalTo(self)
+        }
+        
+    }
+    
+    private func constrainEmail() {
+        addSubview(emailLabel)
+    }
     
 }

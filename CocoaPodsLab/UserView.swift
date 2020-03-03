@@ -13,9 +13,9 @@ class UserView: UIView {
 
     public lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.backgroundColor = .green
+        cv.backgroundColor = .white
         return cv
     }()
     

@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UsersViewController: UIViewController {
     
     private let usersView = UserView()
+    private var users = [User]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.usersView.collectionView.reloadData()
+            }
+        }
+    }
     
     override func loadView() {
         view = usersView
@@ -18,9 +26,53 @@ class UsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        usersView.collectionView.dataSource = self
+        usersView.collectionView.delegate = self
+        usersView.collectionView.register(UserCell.self, forCellWithReuseIdentifier: "userCell")
+        getUser()
+        view.backgroundColor = .white
     }
+    
+    private func getUser() {
+        ApiClient.getUsers { (result) in
+            switch result {
+            case .failure(let AfError):
+                print("error getting users: \(AfError)")
+            case .success(let users):
+                self.users = users
+                print(users.count)
+            }
+        }
+    }
+}
 
+extension UsersViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        users.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userCell", for: indexPath) as? UserCell else {
+             fatalError("could not downcast to userCell")
+        }
+        
+        let user = users[indexPath.row]
+        
+        cell.configureCell(user: user)
+        return cell
+    }
+    
+}
 
+extension UsersViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let maxSize: CGSize = UIScreen.main.bounds.size
+        
+        let itemWidth = maxSize.width
+        
+        let itemHeight = maxSize.height * 0.20
+        
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
 }
 
