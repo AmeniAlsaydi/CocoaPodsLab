@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		B7669EDF240EE7D1003F821D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EDE240EE7D1003F821D /* AppDelegate.swift */; };
 		B7669EE1240EE7D1003F821D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EE0240EE7D1003F821D /* SceneDelegate.swift */; };
-		B7669EE3240EE7D1003F821D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EE2240EE7D1003F821D /* ViewController.swift */; };
-		B7669EE6240EE7D1003F821D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7669EE4240EE7D1003F821D /* Main.storyboard */; };
+		B7669EE3240EE7D1003F821D /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EE2240EE7D1003F821D /* UsersViewController.swift */; };
 		B7669EE8240EE7D3003F821D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7669EE7240EE7D3003F821D /* Assets.xcassets */; };
 		B7669EEB240EE7D3003F821D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7669EE9240EE7D3003F821D /* LaunchScreen.storyboard */; };
 		B7669EF3240EF052003F821D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EF2240EF052003F821D /* ApiClient.swift */; };
 		B7669EF5240EF341003F821D /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EF4240EF341003F821D /* RandomUser.swift */; };
+		B7669EF7240F0084003F821D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EF6240F0084003F821D /* UserView.swift */; };
+		B7669EF9240F024C003F821D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EF8240F024C003F821D /* UserCell.swift */; };
 		CD103012B05DA2BFEBC4085A /* Pods_CocoaPodsLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09FDEFED7711A78F67B933C /* Pods_CocoaPodsLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,13 +25,14 @@
 		B7669EDB240EE7D1003F821D /* CocoaPodsLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPodsLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7669EDE240EE7D1003F821D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7669EE0240EE7D1003F821D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B7669EE2240EE7D1003F821D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B7669EE5240EE7D1003F821D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7669EE2240EE7D1003F821D /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		B7669EE7240EE7D3003F821D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7669EEA240EE7D3003F821D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7669EEC240EE7D3003F821D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7669EF2240EF052003F821D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		B7669EF4240EF341003F821D /* RandomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUser.swift; sourceTree = "<group>"; };
+		B7669EF6240F0084003F821D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		B7669EF8240F024C003F821D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C7A6EBDF7429ACD38DF11549 /* Pods-CocoaPodsLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsLab.debug.xcconfig"; path = "Target Support Files/Pods-CocoaPodsLab/Pods-CocoaPodsLab.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,8 +81,9 @@
 				B7669EF2240EF052003F821D /* ApiClient.swift */,
 				B7669EF4240EF341003F821D /* RandomUser.swift */,
 				B7669EE0240EE7D1003F821D /* SceneDelegate.swift */,
-				B7669EE2240EE7D1003F821D /* ViewController.swift */,
-				B7669EE4240EE7D1003F821D /* Main.storyboard */,
+				B7669EE2240EE7D1003F821D /* UsersViewController.swift */,
+				B7669EF6240F0084003F821D /* UserView.swift */,
+				B7669EF8240F024C003F821D /* UserCell.swift */,
 				B7669EE7240EE7D3003F821D /* Assets.xcassets */,
 				B7669EE9240EE7D3003F821D /* LaunchScreen.storyboard */,
 				B7669EEC240EE7D3003F821D /* Info.plist */,
@@ -159,7 +162,6 @@
 			files = (
 				B7669EEB240EE7D3003F821D /* LaunchScreen.storyboard in Resources */,
 				B7669EE8240EE7D3003F821D /* Assets.xcassets in Resources */,
-				B7669EE6240EE7D1003F821D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,25 +214,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7669EE3240EE7D1003F821D /* ViewController.swift in Sources */,
+				B7669EE3240EE7D1003F821D /* UsersViewController.swift in Sources */,
+				B7669EF7240F0084003F821D /* UserView.swift in Sources */,
 				B7669EDF240EE7D1003F821D /* AppDelegate.swift in Sources */,
 				B7669EE1240EE7D1003F821D /* SceneDelegate.swift in Sources */,
 				B7669EF3240EF052003F821D /* ApiClient.swift in Sources */,
 				B7669EF5240EF341003F821D /* RandomUser.swift in Sources */,
+				B7669EF9240F024C003F821D /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B7669EE4240EE7D1003F821D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7669EE5240EE7D1003F821D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B7669EE9240EE7D3003F821D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

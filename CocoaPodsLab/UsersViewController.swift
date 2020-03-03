@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UsersViewController: UIViewController {
+    
+    private let usersView = UserView()
+    
+    override func loadView() {
+        view = usersView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemPink
     }
 
 
