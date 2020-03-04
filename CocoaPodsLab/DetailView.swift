@@ -1,5 +1,5 @@
 //
-//  UserCell.swift
+//  DetailView.swift
 //  CocoaPodsLab
 //
 //  Created by Amy Alsaydi on 3/3/20.
@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import SnapKit
-import Kingfisher
 
-class UserCell: UICollectionViewCell {
-    
-    private lazy var userImage: UIImageView = {
+class DetailView: UIView {
+
+    public lazy var userImage: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "photo")
         iv.contentMode = .scaleAspectFill
@@ -20,29 +18,21 @@ class UserCell: UICollectionViewCell {
         iv.layer.cornerRadius = 13
         return iv
     }()
-    private lazy var nameLabel: UILabel = {
+    public lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
         return label
     }()
     
-    private lazy var emailLabel: UILabel = {
+    public lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "Email"
         label.numberOfLines = 0
         return label
     }()
     
-    public func configureCell(user: User) {
-        nameLabel.text = "\(user.name.first) \(user.name.last)"
-        emailLabel.text = user.email
-        let imageUrl = URL(string: user.picture.medium)
-        userImage.kf.setImage(with: imageUrl)
-    }
-    
-    // constraints
     override init(frame: CGRect) {
-        super.init(frame: frame) // for a cell
+        super.init(frame: UIScreen.main.bounds)
         commonInit()
     }
     
@@ -53,8 +43,8 @@ class UserCell: UICollectionViewCell {
     
     private func commonInit() {
         constrainImage()
-        constrainName()
-        constrainEmail()
+        //constrainName()
+        //constrainEmail()
     }
     
     private func constrainImage() {
@@ -62,11 +52,10 @@ class UserCell: UICollectionViewCell {
             
         userImage.snp.makeConstraints { (make) in
             
-            make.height.equalTo(self).multipliedBy(0.9)
-            make.leading.equalTo(self).offset(10)
-            make.width.equalTo(self).multipliedBy(0.5)
-            make.centerY.equalTo(self)
-          
+            make.height.equalTo(self).multipliedBy(0.5)
+            make.leading.equalTo(self).offset(0)
+            make.trailing.equalTo(self).offset(0)
+            make.top.equalTo(self).offset(0)
         }
         
     }
@@ -91,4 +80,6 @@ class UserCell: UICollectionViewCell {
         }
     }
     
+    
+
 }

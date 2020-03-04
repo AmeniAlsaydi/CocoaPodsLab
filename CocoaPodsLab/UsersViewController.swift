@@ -74,5 +74,11 @@ extension UsersViewController: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        let detailVC = DetailViewController(user)
+        present(detailVC, animated: true)
+    }
 }
 

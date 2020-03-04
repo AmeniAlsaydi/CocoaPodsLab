@@ -16,6 +16,8 @@
 		B7669EF5240EF341003F821D /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EF4240EF341003F821D /* RandomUser.swift */; };
 		B7669EF7240F0084003F821D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EF6240F0084003F821D /* UserView.swift */; };
 		B7669EF9240F024C003F821D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EF8240F024C003F821D /* UserCell.swift */; };
+		B7669EFB240F2453003F821D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EFA240F2453003F821D /* DetailViewController.swift */; };
+		B7669EFD240F2464003F821D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7669EFC240F2464003F821D /* DetailView.swift */; };
 		CD103012B05DA2BFEBC4085A /* Pods_CocoaPodsLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09FDEFED7711A78F67B933C /* Pods_CocoaPodsLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		B7669EF4240EF341003F821D /* RandomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUser.swift; sourceTree = "<group>"; };
 		B7669EF6240F0084003F821D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		B7669EF8240F024C003F821D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		B7669EFA240F2453003F821D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B7669EFC240F2464003F821D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C7A6EBDF7429ACD38DF11549 /* Pods-CocoaPodsLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsLab.debug.xcconfig"; path = "Target Support Files/Pods-CocoaPodsLab/Pods-CocoaPodsLab.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,8 @@
 				B7669EF4240EF341003F821D /* RandomUser.swift */,
 				B7669EE0240EE7D1003F821D /* SceneDelegate.swift */,
 				B7669EE2240EE7D1003F821D /* UsersViewController.swift */,
+				B7669EFA240F2453003F821D /* DetailViewController.swift */,
+				B7669EFC240F2464003F821D /* DetailView.swift */,
 				B7669EF6240F0084003F821D /* UserView.swift */,
 				B7669EF8240F024C003F821D /* UserCell.swift */,
 				B7669EE7240EE7D3003F821D /* Assets.xcassets */,
@@ -215,12 +221,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7669EE3240EE7D1003F821D /* UsersViewController.swift in Sources */,
+				B7669EFD240F2464003F821D /* DetailView.swift in Sources */,
 				B7669EF7240F0084003F821D /* UserView.swift in Sources */,
 				B7669EDF240EE7D1003F821D /* AppDelegate.swift in Sources */,
 				B7669EE1240EE7D1003F821D /* SceneDelegate.swift in Sources */,
 				B7669EF3240EF052003F821D /* ApiClient.swift in Sources */,
 				B7669EF5240EF341003F821D /* RandomUser.swift in Sources */,
 				B7669EF9240F024C003F821D /* UserCell.swift in Sources */,
+				B7669EFB240F2453003F821D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
