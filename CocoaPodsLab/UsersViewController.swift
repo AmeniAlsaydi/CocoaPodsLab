@@ -26,11 +26,14 @@ class UsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Random Users"
         usersView.collectionView.dataSource = self
         usersView.collectionView.delegate = self
         usersView.collectionView.register(UserCell.self, forCellWithReuseIdentifier: "userCell")
         getUser()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     private func getUser() {

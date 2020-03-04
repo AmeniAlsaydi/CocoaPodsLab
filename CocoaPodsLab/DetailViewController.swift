@@ -36,10 +36,34 @@ class DetailViewController: UIViewController {
     
     private func updateUI() {
         
-        detailView.nameLabel.text = user.name.first
-        detailView.emailLabel.text = user.email
+        detailView.nameLabel.text = "\(user.name.first) \(user.name.last)"
+        detailView.emailLabel.text = "Email: \(user.email)"
         let imageUrl = URL(string: user.picture.large)
         detailView.userImage.kf.setImage(with: imageUrl)
+        let address = "\(user.location.street.number) \(user.location.street.name) \(user.location.city) \(user.location.state) \(user.location.postcode)"
+        detailView.addressLabel.text = "Address: \(address)"
+        detailView.phoneNumLabel.text = "Phone number: \(user.phone)"
+
+        //format the bday
+        let isoDateFormatter = ISO8601DateFormatter()
+            isoDateFormatter.formatOptions = [.withInternetDateTime,
+                                              .withDashSeparatorInDate,
+                                              .withFullDate,
+                                              .withFractionalSeconds,
+                                              .withColonSeparatorInTimeZone]
+            isoDateFormatter.timeZone = TimeZone.current
+        
+            
+            let timestampString = user.dob.date
+            if let date = isoDateFormatter.date(from: timestampString) {
+              let dateFormatter = DateFormatter()
+              dateFormatter.dateFormat = "MMMM, dd, yyyy"
+              let dateFormattedString = dateFormatter.string(from: date)
+              detailView.bdayLabel.text = "DOB: \(dateFormattedString)"
+            } else {
+              print("not a valid date")
+            }
+
     }
 
 }

@@ -23,12 +23,14 @@ class UserCell: UICollectionViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return label
     }()
     
     private lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "Email"
+        label.font = UIFont.systemFont(ofSize: 14, weight: .thin)
         label.numberOfLines = 0
         return label
     }()

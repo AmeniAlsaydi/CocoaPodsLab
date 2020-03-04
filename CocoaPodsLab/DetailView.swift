@@ -22,6 +22,7 @@ class DetailView: UIView {
     public lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
+        label.font = UIFont.systemFont(ofSize: 27, weight: .bold)
         return label
     }()
     
@@ -29,23 +30,28 @@ class DetailView: UIView {
         let label = UILabel()
         label.text = "Email"
         label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 18, weight: .thin)
         return label
     }()
     
     public lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.text = "Address"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 18, weight: .thin)
         return label
     }()
     
     public lazy var bdayLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18, weight: .thin)
         label.text = "Birthday"
         return label
     }()
     
     public lazy var phoneNumLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18, weight: .thin)
         label.text = "Number"
         return label
     }()
@@ -64,6 +70,9 @@ class DetailView: UIView {
         constrainImage()
         constrainName()
         constrainEmail()
+        constrainAddress()
+        constrainBday()
+        constrainPhone()
     }
     
     private func constrainImage() {
@@ -99,7 +108,32 @@ class DetailView: UIView {
         }
     }
     
-    //private func constrain 
+    private func constrainAddress() {
+        addSubview(addressLabel)
+        addressLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(self).offset(20)
+            make.trailing.equalTo(self).offset(20)
+            make.top.equalTo(emailLabel.snp.bottom).offset(20)
+        }
+    }
+    
+    private func constrainBday() {
+        addSubview(bdayLabel)
+        bdayLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(self).offset(20)
+            make.trailing.equalTo(self).offset(20)
+            make.top.equalTo(addressLabel.snp.bottom).offset(20)
+        }
+    }
+    
+    private func constrainPhone() {
+        addSubview(phoneNumLabel)
+        phoneNumLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(self).offset(20)
+            make.trailing.equalTo(self).offset(20)
+            make.top.equalTo(bdayLabel.snp.bottom).offset(20)
+        }
+    }
     
 
 }
