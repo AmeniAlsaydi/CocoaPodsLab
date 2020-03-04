@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DetailView: UIView {
 
@@ -31,6 +32,24 @@ class DetailView: UIView {
         return label
     }()
     
+    public lazy var addressLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Address"
+        return label
+    }()
+    
+    public lazy var bdayLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Birthday"
+        return label
+    }()
+    
+    public lazy var phoneNumLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Number"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -43,8 +62,8 @@ class DetailView: UIView {
     
     private func commonInit() {
         constrainImage()
-        //constrainName()
-        //constrainEmail()
+        constrainName()
+        constrainEmail()
     }
     
     private func constrainImage() {
@@ -64,9 +83,9 @@ class DetailView: UIView {
         addSubview(nameLabel)
         
         nameLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(userImage.snp.trailing).offset(10)
-            make.trailing.equalTo(self).offset(10)
-            make.centerY.equalTo(self)
+            make.leading.equalTo(self).offset(20)
+            make.trailing.equalTo(self).offset(20)
+            make.top.equalTo(userImage.snp.bottom).offset(20)
         }
         
     }
@@ -74,12 +93,13 @@ class DetailView: UIView {
     private func constrainEmail() {
         addSubview(emailLabel)
         emailLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(userImage.snp.trailing).offset(10)
-            make.trailing.equalTo(self).offset(10)
-            make.top.equalTo(nameLabel.snp.bottom).offset(10)
+            make.leading.equalTo(self).offset(20)
+            make.trailing.equalTo(self).offset(20)
+            make.top.equalTo(nameLabel.snp.bottom).offset(20)
         }
     }
     
+    //private func constrain 
     
 
 }
